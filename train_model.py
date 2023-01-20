@@ -25,7 +25,7 @@ X_train, y_train, encoder, lb = process_data(
 )
 # Process the test data with the process_data function.
 X_test, y_test, encoder, lb = process_data(
-    train, categorical_features=cat_features, label="salary", training=False,
+    test, categorical_features=cat_features, label="salary", training=False,
     encoder=encoder, lb=lb
 )
 # Train and save a model.

@@ -19,7 +19,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     lr = LogisticRegression(max_iter=1000, random_state=23)
-    lr.fit(X_train,y_train)
+    lr.fit(X_train, y_train)
     return lr
 
 
@@ -59,7 +59,6 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-
     preds = model.predict(X)
     return preds
 
