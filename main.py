@@ -34,6 +34,19 @@ class CensusValue(BaseModel):
 
     class Config:
         allow_population_by_field_name = True
+        schema_extra = {
+            "example": {
+                "workclass": "Private",
+                "education": "Bachelors",
+                "marital-status": "Never-married",
+                "occupation": "Adm-clerical",
+                "relationship": "Not-in-family",
+                "race": "White",
+                "sex": "Male",
+                "native-country": "Cuba",
+                "salary": "<=50K"
+            }
+        }
 
 
 @app.get("/")
