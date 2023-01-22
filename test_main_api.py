@@ -14,9 +14,22 @@ def test_get():
     assert r.json() == {"message": "Welcome to Deploying ML Model to Cloud Application Exam with Census Data"}
 
 def test_post_data_sucess():
-    data ={"workclass":'Private', "education":'Bachelors', "marital_status":'Never-married',
-           "occupation":'Adm-clerical', "relationship":'Not-in-family',"race":'White',
-           "sex":'Male', "native_country":'Cuba', "salary":'<=50K'}
+    data ={"age": 30,
+      "workclass": "Private",
+      "fnlgt": 123455,
+      "education": "Bachelors",
+      "education-num": 10,
+      "marital-status": "Never-married",
+      "occupation": "Adm-clerical",
+      "relationship": "Not-in-family",
+      "race": "White",
+      "sex": "Male",
+      "capital-gain": 10,
+      "capital-loss": 0,
+      "hours-per-week": 40,
+      "native-country": "Cuba",
+      "salary": "<=50K"
+    }
     r = client.post("/predict_salary", data=json.dumps(data))
     assert r.status_code == 200
     assert r.json()
