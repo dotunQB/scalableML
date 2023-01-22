@@ -80,7 +80,7 @@ def predict_salary(body: CensusValue):
     precision, recall, fbeta = compute_model_metrics(y_test, preds)
     print(preds)
     return {
-        "prediction is ": int(preds),
+        "prediction is ": str(preds),
         "precision is ": precision,
         "recall is ": recall,
         "fbeta is ": fbeta
