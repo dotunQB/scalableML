@@ -50,6 +50,8 @@ def general_pipeline(data, cat_features, path_name):
     print("recall is: ", recall)
     print("fbeta is: ", fbeta)
 
+    return encoder, lb
+
 
 # run on general data without slices
 general_pipeline(data, cat_features, "model_out.pkl")
@@ -57,4 +59,7 @@ general_pipeline(data, cat_features, "model_out.pkl")
 ### Run pipeline on slices of data, using categorical features
 slice_col=cat_features + ["salary"]
 sliced_data = data[slice_col]
-general_pipeline(sliced_data, cat_features, "model_slice.pkl")
+encoder, lb = general_pipeline(sliced_data, cat_features, "model_slice.pkl")
+
+pickle.dump(encoder, open("encoder_out.pkl", "wb"))
+pickle.dump(lb, open("lb_out.pkl", "wb"))
