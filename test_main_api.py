@@ -24,4 +24,4 @@ def test_post_data_fail():
            "sex":'Male', "native_country":'Cuba'}
     r = client.post("/predict_salary", data=json.dumps(data))
     assert r.status_code == 422
-    assert not r.json()
+    assert r.json()['detail'][0]['type'] == 'value_error.missing'
